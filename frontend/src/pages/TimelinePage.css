@@ -1,0 +1,140 @@
+.timeline-container {
+  padding: 1rem 0;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+}
+
+.page-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background: var(--border-light);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: var(--text-secondary);
+  transform: translateX(-50%);
+}
+
+.timeline-item.completed .timeline-marker {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.timeline-item.current .timeline-marker {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.timeline-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.action-btn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.action-btn.completed {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.action-btn.current {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.action-btn.upcoming {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.action-btn.current:hover {
+  background: var(--accent-gradient);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 16px;
+  }
+  .timeline-marker {
+    left: 16px;
+    width: 20px;
+    height: 20px;
+  }
+  .timeline-item {
+    padding-left: 3rem;
+  }
+}

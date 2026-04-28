@@ -1,0 +1,411 @@
+{
+  "timeline": [
+    {
+      "id": 1,
+      "title": "Election Schedule Announcement",
+      "date": "March 16, 2024",
+      "description": "The Election Commission of India (ECI) officially announces the 7-phase schedule for the 2024 Lok Sabha elections.",
+      "status": "completed",
+      "action": "View Press Note",
+      "link": "https://eci.gov.in"
+    },
+    {
+      "id": 2,
+      "title": "Model Code of Conduct Enforced",
+      "date": "March 16, 2024",
+      "description": "Immediately following the schedule announcement, the MCC comes into effect across the entire country.",
+      "status": "completed",
+      "action": "Learn Rules",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Phase 1 Polling Begins",
+      "date": "April 19, 2024",
+      "description": "The first and largest phase of voting commences, covering 102 constituencies across 21 states and union territories.",
+      "status": "completed",
+      "action": "Find Polling Booth",
+      "link": "/map"
+    },
+    {
+      "id": 4,
+      "title": "Final Phase (Phase 7) Polling",
+      "date": "June 1, 2024",
+      "description": "The final phase of voting concludes the democratic exercise for the remaining 57 constituencies.",
+      "status": "completed",
+      "action": "Check Status",
+      "link": "https://voters.eci.gov.in"
+    },
+    {
+      "id": 5,
+      "title": "Counting & Results Declaration",
+      "date": "June 4, 2024",
+      "description": "Official vote counting by the ECI across all centers, leading to the final declaration of the 18th Lok Sabha results.",
+      "status": "completed",
+      "action": "View Results",
+      "link": "https://results.eci.gov.in"
+    }
+  ],
+  "quiz": [
+    {
+      "id": 1,
+      "question": "What is the minimum voting age for citizens in India?",
+      "options": ["16", "18", "21", "25"],
+      "answer": "18",
+      "explanation": "According to the 61st Amendment Act of 1988, the voting age in India was lowered from 21 to 18 years."
+    },
+    {
+      "id": 2,
+      "question": "What does EVM stand for in the Indian election system?",
+      "options": ["Election Verification Machine", "Electronic Voting Machine", "Electoral Vote Monitor", "Electric Voting Mechanism"],
+      "answer": "Electronic Voting Machine",
+      "explanation": "EVMs are Electronic Voting Machines used by the Election Commission of India to record votes securely."
+    },
+    {
+      "id": 3,
+      "question": "Which document is primarily issued by the ECI as proof of identity for voting?",
+      "options": ["Aadhaar Card", "PAN Card", "EPIC (Voter ID)", "Passport"],
+      "answer": "EPIC (Voter ID)",
+      "explanation": "EPIC (Electors Photo Identity Card), commonly known as Voter ID, is issued by the ECI specifically for voting."
+    },
+    {
+      "id": 4,
+      "question": "Who appoints the Chief Election Commissioner of India?",
+      "options": ["Prime Minister", "Chief Justice of India", "President of India", "Parliament"],
+      "answer": "President of India",
+      "explanation": "The President of India appoints the Chief Election Commissioner and other Election Commissioners."
+    },
+    {
+      "id": 5,
+      "question": "What does VVPAT stand for?",
+      "options": ["Voter Verifiable Paper Audit Trail", "Voting Verification Print Audit Trail", "Verified Voting Paper Assessment Trail", "Voter Validation Print Audit Tool"],
+      "answer": "Voter Verifiable Paper Audit Trail",
+      "explanation": "VVPAT provides a paper slip to voters confirming their vote was cast correctly."
+    },
+    {
+      "id": 6,
+      "question": "What is NOT allowed during the Model Code of Conduct period?",
+      "options": ["Campaigning", "Announcing new financial grants", "Holding rallies", "Distributing manifestos"],
+      "answer": "Announcing new financial grants",
+      "explanation": "Once MCC is in effect, the ruling party cannot announce new financial grants or projects to influence voters."
+    },
+    {
+      "id": 7,
+      "question": "NOTA is an option on the EVM. What does it stand for?",
+      "options": ["None Of The Above", "No Other True Alternative", "Negative Option To All", "National Option To Abstain"],
+      "answer": "None Of The Above",
+      "explanation": "NOTA allows voters to officially register their rejection of all candidates in the election."
+    },
+    {
+      "id": 8,
+      "question": "What is the maximum number of candidates an EVM can cater to (including NOTA) using a single Ballot Unit?",
+      "options": ["10", "16", "24", "64"],
+      "answer": "16",
+      "explanation": "A single Ballot Unit can accommodate 16 candidates including NOTA. Up to 24 units can be connected together."
+    },
+    {
+      "id": 9,
+      "question": "Which article of the Indian Constitution establishes the Election Commission of India?",
+      "options": ["Article 324", "Article 370", "Article 14", "Article 356"],
+      "answer": "Article 324",
+      "explanation": "Article 324 vests the superintendence, direction, and control of elections in the Election Commission."
+    },
+    {
+      "id": 10,
+      "question": "When is National Voters' Day celebrated in India?",
+      "options": ["January 26", "January 25", "August 15", "October 2"],
+      "answer": "January 25",
+      "explanation": "National Voters' Day is celebrated on January 25 every year to mark the foundation day of the Election Commission of India."
+    },
+    {
+      "id": 11,
+      "question": "Which body conducts elections to the Panchayats and Municipalities?",
+      "options": ["Election Commission of India", "State Election Commission", "Parliament", "Supreme Court"],
+      "answer": "State Election Commission",
+      "explanation": "While the ECI handles national and state assembly elections, local body elections are handled by State Election Commissions."
+    },
+    {
+      "id": 12,
+      "question": "What is the security deposit amount for a Lok Sabha candidate from the general category?",
+      "options": ["Rs. 10,000", "Rs. 25,000", "Rs. 50,000", "Rs. 5,000"],
+      "answer": "Rs. 25,000",
+      "explanation": "A candidate contesting a Lok Sabha election must deposit Rs. 25,000 (Rs. 12,500 for SC/ST)."
+    },
+    {
+      "id": 13,
+      "question": "How many hours before polling must election campaigning officially end?",
+      "options": ["24 hours", "48 hours", "72 hours", "12 hours"],
+      "answer": "48 hours",
+      "explanation": "Campaigning must stop 48 hours before the conclusion of polling to give voters a peaceful period to think."
+    },
+    {
+      "id": 14,
+      "question": "Which of these is used to mark a voter's finger to prevent double voting?",
+      "options": ["Permanent Marker", "Indelible Ink", "Stamppad Ink", "Invisible Ink"],
+      "answer": "Indelible Ink",
+      "explanation": "Indelible ink, containing silver nitrate, is applied to the left index finger and cannot be easily washed off."
+    },
+    {
+      "id": 15,
+      "question": "What is the maximum limit on election expenditure for a Lok Sabha constituency (as of recent revisions)?",
+      "options": ["Rs. 40 Lakhs", "Rs. 70 Lakhs", "Rs. 95 Lakhs", "No Limit"],
+      "answer": "Rs. 95 Lakhs",
+      "explanation": "For bigger states, the expenditure limit for a Lok Sabha candidate is Rs. 95 Lakhs."
+    },
+    {
+      "id": 16,
+      "question": "Who was the first Chief Election Commissioner of independent India?",
+      "options": ["Sukumar Sen", "T. N. Seshan", "S. Y. Quraishi", "Kalyan Sundaram"],
+      "answer": "Sukumar Sen",
+      "explanation": "Sukumar Sen served as the first Chief Election Commissioner of India from 1950 to 1958."
+    },
+    {
+      "id": 17,
+      "question": "Can an NRI (Non-Resident Indian) vote in Indian elections?",
+      "options": ["Yes, through e-voting", "Yes, in person at their registered constituency", "No, NRIs cannot vote", "Yes, through post offices abroad"],
+      "answer": "Yes, in person at their registered constituency",
+      "explanation": "NRIs who hold Indian citizenship can vote, but currently, they must be physically present at their polling station."
+    },
+    {
+      "id": 18,
+      "question": "What is the role of a Returning Officer (RO)?",
+      "options": ["Counts the votes only", "Conducts the election in a constituency", "Transports EVMs", "Appoints the Chief Minister"],
+      "answer": "Conducts the election in a constituency",
+      "explanation": "The RO is the statutory authority responsible for the conduct of elections in a specific constituency."
+    },
+    {
+      "id": 19,
+      "question": "Which form is used for the inclusion of names in the electoral roll for first-time voters?",
+      "options": ["Form 6", "Form 7", "Form 8", "Form 8A"],
+      "answer": "Form 6",
+      "explanation": "Form 6 is used to apply for inclusion of your name in the voter list if you are a new voter."
+    },
+    {
+      "id": 20,
+      "question": "When does the term of a newly elected Lok Sabha officially begin?",
+      "options": ["On election day", "On counting day", "Date of its first meeting", "On Independence Day"],
+      "answer": "Date of its first meeting",
+      "explanation": "The term of the Lok Sabha is five years from the date appointed for its first meeting."
+    },
+    { "id": 21, "question": "Who is the Constitutional Head of the Executive in India?", "options": ["Prime Minister", "President", "Chief Justice", "Speaker of Lok Sabha"], "answer": "President", "explanation": "The President is the constitutional head of the executive of the Union." },
+    { "id": 22, "question": "What is the maximum strength of the Lok Sabha allowed by the Constitution?", "options": ["500", "545", "552", "550"], "answer": "550", "explanation": "The maximum strength of the House is 550 members (after removing the Anglo-Indian reserved seats)." },
+    { "id": 23, "question": "Which of these is NOT a national party in India currently?", "options": ["BJP", "INC", "AAP", "Shiv Sena"], "answer": "Shiv Sena", "explanation": "Shiv Sena is a State recognized party, not a National Party." },
+    { "id": 24, "question": "What is the minimum age to become a Member of Parliament in the Lok Sabha?", "options": ["18", "21", "25", "30"], "answer": "25", "explanation": "Article 84 of the Constitution mandates a minimum age of 25 years for the Lok Sabha." },
+    { "id": 25, "question": "Who administers the oath of office to the President of India?", "options": ["Prime Minister", "Chief Justice of India", "Vice President", "Speaker of Lok Sabha"], "answer": "Chief Justice of India", "explanation": "The Chief Justice of India administers the oath to the President." },
+    { "id": 26, "question": "Which body resolves disputes relating to the election of the President?", "options": ["Election Commission", "Parliament", "Supreme Court", "High Court"], "answer": "Supreme Court", "explanation": "All doubts and disputes regarding the election of a President or Vice-President are inquired into and decided by the Supreme Court." },
+    { "id": 27, "question": "What does Delimitation mean in the context of Indian elections?", "options": ["Limiting campaign spending", "Fixing limits of territorial constituencies", "Limiting the number of candidates", "Limiting voting hours"], "answer": "Fixing limits of territorial constituencies", "explanation": "Delimitation is the act of redrawing the boundaries of an assembly or Lok Sabha seat to represent changes in population." },
+    { "id": 28, "question": "EVMs were first used in which state's assembly election?", "options": ["Kerala", "Goa", "Gujarat", "Tamil Nadu"], "answer": "Kerala", "explanation": "EVMs were first used in the Parur Assembly Constituency of Kerala in 1982." },
+    { "id": 29, "question": "Which color of ballot paper is typically used for Lok Sabha elections when EVMs are not used?", "options": ["White", "Pink", "Green", "Yellow"], "answer": "White", "explanation": "White ballot papers are generally used for Lok Sabha elections, while pink is for Assembly elections." },
+    { "id": 30, "question": "What is the tenure of the Chief Election Commissioner?", "options": ["5 years", "6 years or up to 65 years of age", "4 years", "Life term"], "answer": "6 years or up to 65 years of age", "explanation": "The CEC has a tenure of 6 years or up to the age of 65, whichever is earlier." },
+    { "id": 31, "question": "Who reserves the election symbols for political parties?", "options": ["Supreme Court", "Parliament", "Election Commission of India", "President"], "answer": "Election Commission of India", "explanation": "The ECI is responsible for the allotment of symbols to political parties and candidates." },
+    { "id": 32, "question": "What is an Exit Poll?", "options": ["A poll conducted before voting", "A post-voting survey of voters leaving polling booths", "A poll for exiting politicians", "A final government census"], "answer": "A post-voting survey of voters leaving polling booths", "explanation": "Exit polls are surveys conducted immediately after voters leave the polling stations to predict the result." },
+    { "id": 33, "question": "Which constitutional amendment made the right to form cooperative societies a fundamental right?", "options": ["97th Amendment", "42nd Amendment", "44th Amendment", "73rd Amendment"], "answer": "97th Amendment", "explanation": "The 97th Amendment Act of 2011 gave constitutional status and protection to cooperative societies." },
+    { "id": 34, "question": "Can a person confined in prison vote in Indian elections?", "options": ["Yes, through postal ballot", "No, prisoners lose their voting rights", "Yes, if under trial", "Yes, if permitted by the jailer"], "answer": "No, prisoners lose their voting rights", "explanation": "Under Section 62(5) of the Representation of the People Act, 1951, individuals confined in a prison cannot vote." },
+    { "id": 35, "question": "What is the role of a Presiding Officer?", "options": ["To count votes", "To manage the polling station on election day", "To select candidates", "To announce results"], "answer": "To manage the polling station on election day", "explanation": "The Presiding Officer is in charge of a polling booth and ensures the poll is conducted smoothly and fairly." },
+    { "id": 36, "question": "Who can vote using a Postal Ballot?", "options": ["Anyone who applies", "Armed forces personnel and specific officials on duty", "Only the elderly", "Only politicians"], "answer": "Armed forces personnel and specific officials on duty", "explanation": "Postal ballots are restricted to specific groups like armed forces, officials on election duty, and preventive detainees." },
+    { "id": 37, "question": "What is the maximum age to vote in India?", "options": ["65", "80", "100", "There is no maximum age limit"], "answer": "There is no maximum age limit", "explanation": "There is no upper age limit for voting in India. Any citizen 18 or older can vote." },
+    { "id": 38, "question": "Who designed the Indian EVM?", "options": ["ISRO and DRDO", "BEL and ECIL", "Tata and Reliance", "IIT Delhi"], "answer": "BEL and ECIL", "explanation": "EVMs were designed and developed by Bharat Electronics Limited (BEL) and Electronics Corporation of India Limited (ECIL)." },
+    { "id": 39, "question": "What happens if a candidate's votes are less than 1/6th of the total valid votes polled?", "options": ["They are banned from next election", "They lose their security deposit", "They must pay a fine", "Nothing happens"], "answer": "They lose their security deposit", "explanation": "If a candidate fails to secure at least one-sixth of the valid votes polled, their security deposit is forfeited." },
+    { "id": 40, "question": "What does a 'Star Campaigner' mean?", "options": ["A celebrity who is voting", "A designated prominent campaigner for a recognized party whose expenses are not added to the candidate's limit", "The richest candidate", "The winning candidate"], "answer": "A designated prominent campaigner for a recognized party whose expenses are not added to the candidate's limit", "explanation": "Recognized political parties can have up to 40 Star Campaigners whose travel expenses are borne by the party, not the individual candidate." },
+    { "id": 41, "question": "What is the minimum number of electors required to propose a candidate for Lok Sabha?", "options": ["1", "10", "50", "100"], "answer": "1", "explanation": "For a candidate set up by a recognized National/State party, only 1 elector from the constituency is needed as a proposer." },
+    { "id": 42, "question": "Which App allows citizens to report Model Code of Conduct violations?", "options": ["Voter Helpline", "cVIGIL", "Garuda", "Suvidha"], "answer": "cVIGIL", "explanation": "The cVIGIL app empowers citizens to report MCC and expenditure violations during elections." },
+    { "id": 43, "question": "What is the quorum required to hold a meeting of the Lok Sabha?", "options": ["One-fifth", "One-tenth", "One-half", "Two-thirds"], "answer": "One-tenth", "explanation": "The quorum to constitute a meeting of either House of Parliament is one-tenth of the total number of members." },
+    { "id": 44, "question": "What is the 'None of the Above' (NOTA) button colored?", "options": ["Red", "Green", "Pink", "It does not have a specific color, but is the last panel"], "answer": "It does not have a specific color, but is the last panel", "explanation": "NOTA is placed as the last option on the ballot unit and doesn't have a distinct standardized color requirement." },
+    { "id": 45, "question": "How long is the term of a Rajya Sabha member?", "options": ["4 years", "5 years", "6 years", "Life"], "answer": "6 years", "explanation": "Members of the Rajya Sabha are elected for a term of six years, with one-third retiring every second year." },
+    { "id": 46, "question": "Who decides the date of elections in India?", "options": ["Prime Minister", "President", "Election Commission of India", "Supreme Court"], "answer": "Election Commission of India", "explanation": "The ECI has the sole constitutional authority to announce election schedules." },
+    { "id": 47, "question": "What is an Electoral Bond?", "options": ["A vote certificate", "A financial instrument for making anonymous donations to political parties", "A bond signed by a candidate", "A government loan for elections"], "answer": "A financial instrument for making anonymous donations to political parties", "explanation": "Electoral bonds were bearer instruments used to donate funds to political parties (recently struck down by the SC)." },
+    { "id": 48, "question": "Who is eligible to register as an overseas elector?", "options": ["Any person of Indian origin", "An NRI holding an Indian passport who has not acquired citizenship of any other country", "Anyone living abroad for 10 years", "Foreigners working in India"], "answer": "An NRI holding an Indian passport who has not acquired citizenship of any other country", "explanation": "Only NRIs who are citizens of India and have not acquired foreign citizenship can register as overseas voters." },
+    { "id": 49, "question": "What is the maximum time gap allowed between two sessions of Parliament?", "options": ["3 months", "6 months", "1 year", "No limit"], "answer": "6 months", "explanation": "The Constitution mandates that there should not be a gap of more than six months between two sessions of Parliament." },
+    { "id": 50, "question": "Which of these is considered a 'Corrupt Practice' under election law?", "options": ["Publishing a manifesto", "Appealing for votes on the grounds of religion", "Holding public rallies", "Distributing party flags"], "answer": "Appealing for votes on the grounds of religion", "explanation": "Appealing to voters in the name of religion, race, caste, or community is a corrupt practice under the RPA, 1951." }
+  ],
+  "pollingStations": [
+    {
+      "id": 1,
+      "name": "Kendriya Vidyalaya, Gole Market",
+      "lat": 28.6315,
+      "lng": 77.2023,
+      "accessibility": true,
+      "wait_time": "15 mins"
+    },
+    {
+      "id": 2,
+      "name": "MCD Primary School, Connaught Place",
+      "lat": 28.6320,
+      "lng": 77.2195,
+      "accessibility": true,
+      "wait_time": "5 mins"
+    },
+    {
+      "id": 3,
+      "name": "Govt Boys Senior Secondary School, Paharganj",
+      "lat": 28.6433,
+      "lng": 77.2117,
+      "accessibility": false,
+      "wait_time": "30 mins"
+    }
+  ],
+  "history": [
+    {
+      "year": 1951,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress (INC)",
+      "turnout": "45.7",
+      "seats": 489,
+      "primeMinister": "Jawaharlal Nehru",
+      "description": "The first general election of independent India. It took five months to complete due to the sheer size and challenging geography of the country."
+    },
+    {
+      "year": 1957,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress (INC)",
+      "turnout": "47.74",
+      "seats": 494,
+      "primeMinister": "Jawaharlal Nehru",
+      "description": "The second general election. The INC retained power with a massive majority, winning 371 seats."
+    },
+    {
+      "year": 1962,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress (INC)",
+      "turnout": "55.42",
+      "seats": 494,
+      "primeMinister": "Jawaharlal Nehru",
+      "description": "The third general election saw Jawaharlal Nehru elected for a third consecutive term, though his party lost some seats compared to previous elections."
+    },
+    {
+      "year": 1967,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress (INC)",
+      "turnout": "61.04",
+      "seats": 520,
+      "primeMinister": "Indira Gandhi",
+      "description": "The first election after the deaths of Nehru and Lal Bahadur Shastri. Indira Gandhi led the INC to victory, but with a significantly reduced majority."
+    },
+    {
+      "year": 1971,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress (R)",
+      "turnout": "55.27",
+      "seats": 518,
+      "primeMinister": "Indira Gandhi",
+      "description": "Held after a split in the Congress party. Indira Gandhi's faction, campaigning on the slogan 'Garibi Hatao' (Remove Poverty), won a landslide victory."
+    },
+    {
+      "year": 1977,
+      "type": "Lok Sabha",
+      "winner": "Janata Party",
+      "turnout": "60.49",
+      "seats": 542,
+      "primeMinister": "Morarji Desai",
+      "description": "A historic election following the Emergency (1975-1977). The INC lost power for the first time at the center, leading to the first non-Congress government."
+    },
+    {
+      "year": 1980,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress (I)",
+      "turnout": "56.92",
+      "seats": 529,
+      "primeMinister": "Indira Gandhi",
+      "description": "Following the collapse of the Janata Party government due to internal conflicts, Indira Gandhi returned to power with a strong majority."
+    },
+    {
+      "year": 1984,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress",
+      "turnout": "64.01",
+      "seats": 514,
+      "primeMinister": "Rajiv Gandhi",
+      "description": "Held immediately after the assassination of Indira Gandhi. The INC won 404 seats, the highest number ever won by any party in Indian history."
+    },
+    {
+      "year": 1989,
+      "type": "Lok Sabha",
+      "winner": "National Front (Coalition)",
+      "turnout": "61.95",
+      "seats": 529,
+      "primeMinister": "V. P. Singh",
+      "description": "Resulted in a hung parliament. The Janata Dal formed the National Front government with outside support from the BJP and Left parties."
+    },
+    {
+      "year": 1991,
+      "type": "Lok Sabha",
+      "winner": "Indian National Congress",
+      "turnout": "55.88",
+      "seats": 521,
+      "primeMinister": "P. V. Narasimha Rao",
+      "description": "Marred by the assassination of Rajiv Gandhi mid-campaign. The INC emerged as the largest party and formed a minority government."
+    },
+    {
+      "year": 1996,
+      "type": "Lok Sabha",
+      "winner": "United Front (Coalition)",
+      "turnout": "57.94",
+      "seats": 543,
+      "primeMinister": "H. D. Deve Gowda",
+      "description": "Resulted in a fractured mandate. The BJP formed a 13-day government, followed by the United Front coalition supported by the INC."
+    },
+    {
+      "year": 1998,
+      "type": "Lok Sabha",
+      "winner": "National Democratic Alliance (NDA)",
+      "turnout": "61.97",
+      "seats": 543,
+      "primeMinister": "Atal Bihari Vajpayee",
+      "description": "The BJP-led NDA formed a government that lasted 13 months before losing a confidence motion by exactly one vote."
+    },
+    {
+      "year": 1999,
+      "type": "Lok Sabha",
+      "winner": "National Democratic Alliance (NDA)",
+      "turnout": "59.99",
+      "seats": 543,
+      "primeMinister": "Atal Bihari Vajpayee",
+      "description": "Held after the Kargil War. The NDA secured a clear majority, and Atal Bihari Vajpayee became the first non-Congress PM to complete a full 5-year term."
+    },
+    {
+      "year": 2004,
+      "type": "Lok Sabha",
+      "winner": "United Progressive Alliance (UPA)",
+      "turnout": "58.07",
+      "seats": 543,
+      "primeMinister": "Manmohan Singh",
+      "description": "A surprising defeat for the NDA's 'India Shining' campaign. The Congress-led UPA formed the government with support from Left parties."
+    },
+    {
+      "year": 2009,
+      "type": "Lok Sabha",
+      "winner": "United Progressive Alliance (UPA)",
+      "turnout": "58.21",
+      "seats": 543,
+      "primeMinister": "Manmohan Singh",
+      "description": "The UPA returned to power with an increased mandate. Manmohan Singh became the first PM since Nehru to be re-elected after completing a full five-year term."
+    },
+    {
+      "year": 2014,
+      "type": "Lok Sabha",
+      "winner": "National Democratic Alliance (NDA)",
+      "turnout": "66.44",
+      "seats": 543,
+      "primeMinister": "Narendra Modi",
+      "description": "The BJP achieved an absolute majority on its own (282 seats), marking the first time since 1984 a single party won a majority without coalition support."
+    },
+    {
+      "year": 2019,
+      "type": "Lok Sabha",
+      "winner": "National Democratic Alliance (NDA)",
+      "turnout": "67.40",
+      "seats": 543,
+      "primeMinister": "Narendra Modi",
+      "description": "The BJP secured an even larger majority, winning 303 seats. It was the highest ever voter turnout recorded in Indian history at the time."
+    },
+    {
+      "year": 2024,
+      "type": "Lok Sabha",
+      "winner": "National Democratic Alliance (NDA)",
+      "turnout": "65.79",
+      "seats": 543,
+      "primeMinister": "Narendra Modi",
+      "description": "The BJP-led NDA secured a third consecutive term, though relying more on alliance partners as the BJP did not cross the absolute majority mark alone."
+    }
+  ]
+}

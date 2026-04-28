@@ -1,0 +1,144 @@
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.search-section {
+  padding: 1.5rem;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar-wrapper:focus-within {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  margin-right: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+  gap: 2rem;
+}
+
+.history-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.history-card-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.national {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accent-blue);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-badge.state {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-green);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.history-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.history-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-glass);
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.detail-icon {
+  flex-shrink: 0;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.no-results h3 {
+  color: var(--text-light);
+  margin: 0;
+}
+
+.no-results p {
+  color: var(--text-muted);
+  margin: 0;
+}
