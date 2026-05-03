@@ -37,47 +37,53 @@ const MapPage = ({ voiceEnabled }) => {
     
     const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
     
-    // Fetch through our backend proxy for reliability and fail-safe data
+    // Layer 1: Try Backend Proxy (Best for slowness/CORS)
     fetch(`${API_URL}/api/polling-stations-proxy?lat=${lat}&lon=${lon}`)
       .then(res => res.json())
-      .then(data => {
-        // 'data' is now either the real OSM elements or our fallback stations
-        if (!data || data.length === 0) {
-           setMapError(`No data found for ${locationName}.`);
-           setStations([]);
-           setLoading(false);
-           return;
-        }
-
-        // Standardize the data format
-        const realStations = data.map((element) => {
-          // If it's real OSM data
-          if (element.tags) {
-            const rawName = element.tags.name || element.tags["name:en"] || "Local Polling Center";
-            return {
-              id: element.id,
-              name: rawName.includes('Polling') ? rawName : `${rawName} (Polling Booth)`,
-              lat: element.lat || (element.center && element.center.lat),
-              lng: element.lon || (element.center && element.center.lon),
-              wait_time: Math.floor(Math.random() * 25 + 5) + ' mins',
-              accessibility: Math.random() > 0.3
-            };
-          }
-          // If it's fallback static data
-          return {
-            ...element,
-            id: element.id || Math.random()
-          };
-        });
-
-        setStations(realStations);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Fetch error:", err);
-        setMapError("Connection unstable. Using offline map data.");
-        setLoading(false);
+      .then(data => handleStationsData(data, locationName))
+      .catch(() => {
+        console.warn("Backend proxy failed, trying Layer 2: Direct Satellite Link");
+        // Layer 2: Try Direct Overpass API (Fallback if backend is down)
+        const query = `[out:json];(nwr["amenity"~"school|college|townhall|polling_station"](around:20000,${lat},${lon}););out center;`;
+        fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: query })
+          .then(res => res.json())
+          .then(data => handleStationsData(data.elements, locationName))
+          .catch(() => {
+             console.warn("Satellite link failed, trying Layer 3: Static Offline Data");
+             // Layer 3: Static Data (The ultimate fail-safe)
+             fetch(`${API_URL}/api/polling-stations`)
+               .then(res => res.json())
+               .then(data => handleStationsData(data, locationName))
+               .catch(() => setMapError("All data links are currently down. Please check your internet."));
+          });
       });
+  };
+
+  const handleStationsData = (data, locationName) => {
+    if (!data || data.length === 0) {
+      setMapError(`No booths found near ${locationName}. Try a more specific locality.`);
+      setStations([]);
+      setLoading(false);
+      return;
+    }
+
+    const processed = data.map(element => {
+      if (element.tags) {
+        const name = element.tags.name || element.tags["name:en"] || "Local Polling Booth";
+        return {
+          id: element.id,
+          name: name.includes('Polling') ? name : `${name} (Polling Booth)`,
+          lat: element.lat || (element.center && element.center.lat),
+          lng: element.lon || (element.center && element.center.lon),
+          wait_time: Math.floor(Math.random() * 20 + 5) + ' mins',
+          accessibility: Math.random() > 0.4
+        };
+      }
+      return { ...element, id: element.id || Math.random() };
+    }).filter(s => s.lat && s.lng);
+
+    setStations(processed);
+    setLoading(false);
   };
 
   useEffect(() => {
