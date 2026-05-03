@@ -90,6 +90,17 @@ app.get('/api/polling-stations-proxy', (req, res) => {
   });
 });
 
+// Election History
+app.get('/api/history', (req, res) => {
+  const dynamicData = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
+  res.json(dynamicData.history || []);
+});
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date() });
+});
+
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
     console.log(`Election Backend running on http://localhost:${PORT}`);
