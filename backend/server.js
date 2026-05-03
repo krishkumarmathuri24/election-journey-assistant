@@ -56,6 +56,10 @@ app.get('/api/history', (req, res) => {
   res.json(dynamicData.history || []);
 });
 
-app.listen(PORT, () => {
-  console.log(`Election Backend running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Election Backend running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
