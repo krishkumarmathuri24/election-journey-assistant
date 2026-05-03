@@ -158,7 +158,7 @@ const MapPage = ({ voiceEnabled }) => {
         <form onSubmit={handleSearch} className="search-form">
           <input 
             type="text" 
-            placeholder="Enter any City, Pincode, or Region in India (e.g. Mumbai, 400001)"
+            placeholder="Search City, Pincode, or Region (e.g. Kolkata, 700001)"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="search-input glass-panel"
@@ -177,6 +177,13 @@ const MapPage = ({ voiceEnabled }) => {
             Near Me
           </button>
         </form>
+        
+        <div className="quick-search">
+          <span>Quick Search:</span>
+          <button onClick={() => { setSearchQuery('West Bengal'); setCenter([22.9868, 87.8550]); fetchPollingStations(22.9868, 87.8550, "West Bengal"); }}>West Bengal</button>
+          <button onClick={() => { setSearchQuery('New Delhi'); setCenter([28.6139, 77.2090]); fetchPollingStations(28.6139, 77.2090, "New Delhi"); }}>Delhi</button>
+          <button onClick={() => { setSearchQuery('Mumbai'); setCenter([19.0760, 72.8777]); fetchPollingStations(19.0760, 72.8777, "Mumbai"); }}>Mumbai</button>
+        </div>
       </div>
 
       {mapError && <div className="error-message">{mapError}</div>}

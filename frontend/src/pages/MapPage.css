@@ -212,6 +212,12 @@
   cursor: not-allowed;
 }
 
+/* Custom DivIcon styling to ensure markers are visible */
+.custom-div-icon {
+  background: none !important;
+  border: none !important;
+}
+
 .spin {
   animation: spin 1s linear infinite;
 }
@@ -230,9 +236,32 @@
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
-.loading-text, .no-stations {
-  padding: 1rem;
-  text-align: center;
+.quick-search {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.quick-search span {
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  font-style: italic;
+}
+
+.quick-search button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quick-search button:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
 }
