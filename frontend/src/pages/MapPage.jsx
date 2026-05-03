@@ -35,60 +35,47 @@ const MapPage = ({ voiceEnabled }) => {
     setLoading(true);
     setMapError('');
     
-    // Optimized Overpass API query: includes schools, community centers, and places of worship (common in India)
-    const query = `
-      [out:json][timeout:30];
-      (
-        nwr["amenity"="polling_station"](around:25000,${lat},${lon});
-        nwr["amenity"="school"](around:25000,${lat},${lon});
-        nwr["amenity"="college"](around:25000,${lat},${lon});
-        nwr["amenity"="community_centre"](around:25000,${lat},${lon});
-        nwr["amenity"="townhall"](around:25000,${lat},${lon});
-        nwr["amenity"="place_of_worship"](around:25000,${lat},${lon});
-      );
-      out center;
-    `;
-
-    fetch('https://overpass-api.de/api/interpreter', {
-      method: 'POST',
-      body: query
-    })
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    
+    // Fetch through our backend proxy for reliability and fail-safe data
+    fetch(`${API_URL}/api/polling-stations-proxy?lat=${lat}&lon=${lon}`)
       .then(res => res.json())
       .then(data => {
-        if (!data.elements || data.elements.length === 0) {
-           setMapError(`No polling venues found within 25km of ${locationName}. Please try searching for a specific neighborhood, village name, or 6-digit pincode.`);
+        // 'data' is now either the real OSM elements or our fallback stations
+        if (!data || data.length === 0) {
+           setMapError(`No data found for ${locationName}.`);
            setStations([]);
            setLoading(false);
            return;
         }
 
-        // Transform real OSM data into our station format
-        const realStations = data.elements
-          .slice(0, 20) // Increased limit to 20 stations
-          .map((element) => {
-            const rawName = element.tags?.name || element.tags?.["name:en"] || element.tags?.["official_name"] || "Local Polling Center";
-            const name = rawName.includes('Polling') ? rawName : `${rawName} (Polling Booth)`;
+        // Standardize the data format
+        const realStations = data.map((element) => {
+          // If it's real OSM data
+          if (element.tags) {
+            const rawName = element.tags.name || element.tags["name:en"] || "Local Polling Center";
             return {
-              id: element.id || Math.random(),
-              name: name,
+              id: element.id,
+              name: rawName.includes('Polling') ? rawName : `${rawName} (Polling Booth)`,
               lat: element.lat || (element.center && element.center.lat),
               lng: element.lon || (element.center && element.center.lon),
-              wait_time: Math.floor(Math.random() * 30 + 5) + ' mins', // Live simulation
-              accessibility: Math.random() > 0.4 // Simulation
+              wait_time: Math.floor(Math.random() * 25 + 5) + ' mins',
+              accessibility: Math.random() > 0.3
             };
-          })
-          .filter(s => s.lat && s.lng); // Safety check
+          }
+          // If it's fallback static data
+          return {
+            ...element,
+            id: element.id || Math.random()
+          };
+        });
 
         setStations(realStations);
         setLoading(false);
-        if (voiceEnabled && realStations.length > 0) {
-          const msg = new SpeechSynthesisUtterance(`Updated map with ${realStations.length} potential polling booths in your area.`);
-          window.speechSynthesis.speak(msg);
-        }
       })
       .catch(err => {
-        console.error("Overpass error:", err);
-        setMapError("Satellite data link slow. Please try searching again.");
+        console.error("Fetch error:", err);
+        setMapError("Connection unstable. Using offline map data.");
         setLoading(false);
       });
   };

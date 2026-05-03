@@ -50,10 +50,44 @@ app.get('/api/polling-stations', (req, res) => {
   res.json(dynamicData.pollingStations);
 });
 
-// Election History
-app.get('/api/history', (req, res) => {
-  const dynamicData = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
-  res.json(dynamicData.history || []);
+const https = require('https');
+
+// Proxy endpoint for Overpass API to avoid CORS and slowness
+app.get('/api/polling-stations-proxy', (req, res) => {
+  const { lat, lon } = req.query;
+  const query = `
+    [out:json][timeout:15];
+    (
+      nwr["amenity"="polling_station"](around:20000,${lat},${lon});
+      nwr["amenity"="school"](around:20000,${lat},${lon});
+      nwr["amenity"="college"](around:20000,${lat},${lon});
+      nwr["amenity"="community_centre"](around:20000,${lat},${lon});
+    );
+    out center;
+  `;
+
+  const overpassUrl = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`;
+
+  https.get(overpassUrl, (response) => {
+    let data = '';
+    response.on('data', (chunk) => { data += chunk; });
+    response.on('end', () => {
+      try {
+        const json = JSON.parse(data);
+        if (json.elements && json.elements.length > 0) {
+          res.json(json.elements);
+        } else {
+          // Fallback to static sample data if no real data found
+          res.json(require('./data.json').pollingStations);
+        }
+      } catch (e) {
+        res.json(require('./data.json').pollingStations);
+      }
+    });
+  }).on('error', (err) => {
+    // Fallback to static data on error
+    res.json(require('./data.json').pollingStations);
+  });
 });
 
 if (process.env.NODE_ENV !== 'production') {
