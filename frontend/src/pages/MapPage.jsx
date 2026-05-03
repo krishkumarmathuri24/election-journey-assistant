@@ -35,15 +35,16 @@ const MapPage = ({ voiceEnabled }) => {
     setLoading(true);
     setMapError('');
     
-    // Optimized Overpass API query: specific polling station tags + common polling venues in India
+    // Optimized Overpass API query: includes schools, community centers, and places of worship (common in India)
     const query = `
-      [out:json][timeout:25];
+      [out:json][timeout:30];
       (
-        nwr["amenity"="polling_station"](around:20000,${lat},${lon});
-        nwr["amenity"="school"](around:20000,${lat},${lon});
-        nwr["amenity"="college"](around:20000,${lat},${lon});
-        nwr["amenity"="townhall"](around:20000,${lat},${lon});
-        nwr["amenity"="community_centre"](around:20000,${lat},${lon});
+        nwr["amenity"="polling_station"](around:25000,${lat},${lon});
+        nwr["amenity"="school"](around:25000,${lat},${lon});
+        nwr["amenity"="college"](around:25000,${lat},${lon});
+        nwr["amenity"="community_centre"](around:25000,${lat},${lon});
+        nwr["amenity"="townhall"](around:25000,${lat},${lon});
+        nwr["amenity"="place_of_worship"](around:25000,${lat},${lon});
       );
       out center;
     `;
@@ -55,7 +56,7 @@ const MapPage = ({ voiceEnabled }) => {
       .then(res => res.json())
       .then(data => {
         if (!data.elements || data.elements.length === 0) {
-           setMapError(`No official polling venues found within 20km of ${locationName}. Try a more specific locality or pincode.`);
+           setMapError(`No polling venues found within 25km of ${locationName}. Please try searching for a specific neighborhood, village name, or 6-digit pincode.`);
            setStations([]);
            setLoading(false);
            return;
@@ -63,24 +64,25 @@ const MapPage = ({ voiceEnabled }) => {
 
         // Transform real OSM data into our station format
         const realStations = data.elements
-          .filter(element => element.tags && (element.tags.name || element.tags["name:en"]))
-          .slice(0, 15) // Limit to 15 stations
+          .slice(0, 20) // Increased limit to 20 stations
           .map((element) => {
-            const name = element.tags.name || element.tags["name:en"];
+            const rawName = element.tags?.name || element.tags?.["name:en"] || element.tags?.["official_name"] || "Local Polling Center";
+            const name = rawName.includes('Polling') ? rawName : `${rawName} (Polling Booth)`;
             return {
-              id: element.id,
-              name: name.includes('Polling') ? name : `${name} (Polling Booth)`,
+              id: element.id || Math.random(),
+              name: name,
               lat: element.lat || (element.center && element.center.lat),
               lng: element.lon || (element.center && element.center.lon),
-              wait_time: Math.floor(Math.random() * 35 + 5) + ' mins', // Realistic simulation
-              accessibility: Math.random() > 0.3 // Realistically most are accessible now
+              wait_time: Math.floor(Math.random() * 30 + 5) + ' mins', // Live simulation
+              accessibility: Math.random() > 0.4 // Simulation
             };
-          });
+          })
+          .filter(s => s.lat && s.lng); // Safety check
 
         setStations(realStations);
         setLoading(false);
         if (voiceEnabled && realStations.length > 0) {
-          const msg = new SpeechSynthesisUtterance(`Found ${realStations.length} polling stations near your search.`);
+          const msg = new SpeechSynthesisUtterance(`Updated map with ${realStations.length} potential polling booths in your area.`);
           window.speechSynthesis.speak(msg);
         }
       })
